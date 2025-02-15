@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class WebSocketServices {
@@ -20,10 +21,14 @@ class WebSocketServices {
       // add all incoming data from the server
       _controller.add(data);
     }, onError: (err) {
-      print(err.toString());
+      if (kDebugMode) {
+        print(err.toString());
+      }
     }, onDone: () {
       // closing the web socket
-      print("Web Socket Closed");
+      if (kDebugMode) {
+        print("Web Socket Closed");
+      }
     });
   }
 
