@@ -1,4 +1,3 @@
-import 'package:chat_ai/screens/chat_screen.dart';
 import 'package:chat_ai/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 

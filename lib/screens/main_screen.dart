@@ -12,9 +12,9 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int currentIdx = 0;
 
-  List<Widget> _screens = [
-    ChatScreen(),
-    ImageGenerator(),
+  final List<Widget> _screens = [
+    const ChatScreen(),
+    const ImageGenerator(),
   ];
 
   List<String> type = ["Text", "Image"];
@@ -30,11 +30,11 @@ class _MainScreenState extends State<MainScreen> {
         ),
         title: Row(
           children: [
-            Icon(
+            const Icon(
               Icons.flutter_dash,
               color: Colors.white,
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             const Text(
               "Chat",
               style: TextStyle(
@@ -42,10 +42,10 @@ class _MainScreenState extends State<MainScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             Container(
               height: 30,
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
                 color: Colors.red.shade300,
                 borderRadius: BorderRadius.circular(8),
@@ -53,7 +53,7 @@ class _MainScreenState extends State<MainScreen> {
               child: Center(
                 child: Text(
                   type[currentIdx],
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                   ),
                 ),
@@ -66,13 +66,13 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: const Color(0xff282424),
         child: Column(
           children: [
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.chat,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 "Text Generation",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -85,11 +85,11 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.photo,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 "Image Generation",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

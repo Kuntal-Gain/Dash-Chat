@@ -110,13 +110,19 @@ class _ImageGeneratorState extends State<ImageGenerator> {
           children: [
             // Icon for AI message (Left side)
             if (!message.isUser)
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: Icon(
-                  Icons.flutter_dash_outlined,
-                  color: Colors.grey[400],
-                  size: 30,
-                ),
+              Column(
+                mainAxisAlignment:
+                    MainAxisAlignment.end, // Align icon to the bottom
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: Icon(
+                      Icons.flutter_dash_outlined,
+                      color: Colors.grey[400],
+                      size: 30,
+                    ),
+                  ),
+                ],
               ),
             // Message container
             Flexible(
@@ -146,25 +152,9 @@ class _ImageGeneratorState extends State<ImageGenerator> {
                           color: const Color(0xff383434),
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            if (!message.isUser)
-                              Padding(
-                                padding: const EdgeInsets.only(right: 8.0),
-                                child: Icon(
-                                  Icons.access_time,
-                                  color: Colors.grey[400],
-                                  size: 24,
-                                ),
-                              ),
-                            Flexible(
-                              child: Text(
-                                message.text,
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                            ),
-                          ],
+                        child: Text(
+                          message.text,
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
               ),

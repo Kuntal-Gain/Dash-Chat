@@ -1,5 +1,8 @@
+// ignore_for_file: no_wildcard_variable_uses
+
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
@@ -23,7 +26,9 @@ class ApiService {
         return eventId;
       }
     } catch (_) {
-      print(_.toString());
+      if (kDebugMode) {
+        print(_.toString());
+      }
     }
     return null;
   }
@@ -36,7 +41,9 @@ class ApiService {
       );
 
       // Print the raw response for debugging
-      print("Raw Response: ${response.body}");
+      if (kDebugMode) {
+        print("Raw Response: ${response.body}");
+      }
 
       // Use RegExp to find the URL in the response body
       final RegExp regExp = RegExp(r'"url":\s?"(https://[^"]+)"');
@@ -52,7 +59,9 @@ class ApiService {
         return imageUrl;
       }
     } catch (e) {
-      print("Error: $e");
+      if (kDebugMode) {
+        print("Error: $e");
+      }
     }
 
     return null;
