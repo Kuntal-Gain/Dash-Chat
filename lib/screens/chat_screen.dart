@@ -58,20 +58,6 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff282424),
-      appBar: AppBar(
-        backgroundColor: const Color(0xff282424),
-        leading: const Icon(
-          Icons.flutter_dash,
-          color: Colors.white,
-        ),
-        title: const Text(
-          "Chat",
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
       body: Column(
         children: [
           Expanded(
